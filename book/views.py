@@ -1,6 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import render,redirect
+
+from django.contrib.auth import logout
+
 from django.urls import reverse, reverse_lazy
 from django.views.generic import (
     ListView,
@@ -10,6 +13,10 @@ from django.views.generic import (
     UpdateView,
     )
 from .models import Book, Review
+
+def logout_view(request):
+    logout(request)
+    return redirect('index') 
 
 class ListBookView(LoginRequiredMixin,ListView):
     template_name='book/book_list.html'

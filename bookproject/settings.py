@@ -29,7 +29,11 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rec-anime-site-b1ce77d612af.herokuapp.com']
+# DEBUG = False
+
+
+ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['rec-anime-site-b1ce77d612af.herokuapp.com']
 
 
 # Application definition
